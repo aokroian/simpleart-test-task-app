@@ -1,20 +1,12 @@
-using Reflex.Attributes;
+using Initialization.EntryPoint;
 using Reflex.Core;
 using Reflex.Enums;
+using UI.Routing;
 using UnityEngine;
 using Resolution = Reflex.Enums.Resolution;
 
-namespace __Game.Scripts.Initialization
+namespace Initialization
 {
-    public class DummyService
-    {
-        [Inject]
-        private void Inject()
-        {
-            Debug.Log("DummyService inject");
-        }
-    }
-
     public class ProjectInstaller : MonoBehaviour, IInstaller
     {
         public void InstallBindings(ContainerBuilder builder)
@@ -25,11 +17,26 @@ namespace __Game.Scripts.Initialization
 
         private void InstallConfigs(ContainerBuilder builder)
         {
+            builder.RegisterType(
+                typeof(UIConfig),
+                new[] {typeof(IUIConfig)},
+                Lifetime.Singleton,
+                Resolution.Eager
+            );
         }
 
         private void InstallServices(ContainerBuilder builder)
         {
-            builder.RegisterType(typeof(DummyService), Lifetime.Singleton, Resolution.Eager);
+            builder.RegisterType(
+                typeof(UIRoutingService),
+                Lifetime.Singleton,
+                Resolution.Eager
+            );
+            builder.RegisterType(
+                typeof(ProjectEntryPoint),
+                new[] {typeof(IEntryPoint)},
+                Lifetime.Singleton,
+                Resolution.Eager);
         }
     }
 }
