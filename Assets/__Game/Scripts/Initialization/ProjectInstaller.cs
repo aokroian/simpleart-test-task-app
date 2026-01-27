@@ -33,6 +33,11 @@ namespace Initialization
                 Resolution.Eager
             );
             builder.RegisterType(
+                typeof(UIRoutingFlowManager),
+                Lifetime.Singleton,
+                Resolution.Eager
+            );
+            builder.RegisterType(
                 typeof(ProjectEntryPoint),
                 new[] {typeof(IEntryPoint)},
                 Lifetime.Singleton,
