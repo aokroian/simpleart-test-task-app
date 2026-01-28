@@ -1,11 +1,12 @@
 using System;
 using Cards;
+using PolyAndCode.UI;
 using UI.Utils;
 using UnityEngine;
 
 namespace UI.Cards
 {
-    public class CardView : MonoBehaviour, IDisposable
+    public class CardView : MonoBehaviour, IDisposable, ICell
     {
         [SerializeField] private ImageLoader imageLoader;
         [SerializeField] private GameObject premiumGraphics;
@@ -41,6 +42,11 @@ namespace UI.Cards
 
             imageLoader.StopAllCoroutines();
             imageLoader.ClearImage();
+        }
+
+        private void OnDisable()
+        {
+            Dispose();
         }
 
         private void OnImageLoaded(Sprite sprite)
