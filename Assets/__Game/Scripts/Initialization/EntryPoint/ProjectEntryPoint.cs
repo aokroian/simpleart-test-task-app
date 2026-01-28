@@ -1,4 +1,5 @@
 using System;
+using Cards;
 using Cysharp.Threading.Tasks;
 using R3;
 using Reflex.Attributes;
@@ -25,6 +26,7 @@ namespace Initialization.EntryPoint
         private Observable<Unit> _onDone;
 
         [Inject] private readonly UIRoutingService _uiRoutingService;
+        [Inject] private readonly CardsViewModel _cardsViewModel;
 
         [Inject]
         private async UniTask Inject()
@@ -42,6 +44,7 @@ namespace Initialization.EntryPoint
             try
             {
                 await _uiRoutingService.InitializeAsync();
+                _cardsViewModel.Initialize();
             }
             catch (Exception e)
             {

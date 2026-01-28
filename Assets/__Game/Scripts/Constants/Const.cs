@@ -9,5 +9,20 @@ namespace Constants
             public const string CardPopup = "card_popup";
             public const string PremiumPopup = "premium_popup";
         }
+
+        public static class Cards
+        {
+            public const string ImagesBaseUrl = "http://data.ikppbb.com/test-task-unity-data/pics/";
+            public const int ImagesUrlsIndicesFirst = 1;
+            public const int ImagesUrlsIndicesLast = 66;
+            public const string ImagesUrlEnding = "/.jpg";
+
+            public static class Filters
+            {
+                public const string All = "all";
+                public const string Odd = "odd";
+                public const string Even = "even";
+            }
+        }
     }
 }

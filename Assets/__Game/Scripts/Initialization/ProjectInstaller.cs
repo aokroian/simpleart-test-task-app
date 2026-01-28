@@ -1,3 +1,4 @@
+using Cards;
 using Initialization.EntryPoint;
 using Reflex.Core;
 using Reflex.Enums;
@@ -27,6 +28,11 @@ namespace Initialization
 
         private void InstallServices(ContainerBuilder builder)
         {
+            builder.RegisterType(
+                typeof(CardsViewModel),
+                Lifetime.Singleton,
+                Resolution.Eager
+            );
             builder.RegisterType(
                 typeof(UIRoutingService),
                 Lifetime.Singleton,
