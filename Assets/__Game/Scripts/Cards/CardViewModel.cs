@@ -1,3 +1,4 @@
+using R3;
 using UnityEngine;
 
 namespace Cards
@@ -6,7 +7,9 @@ namespace Cards
     {
         public readonly string ImageUrl;
         public readonly bool IsPremium;
-        public Sprite Sprite { get; private set; }
+        public ReadOnlyReactiveProperty<Sprite> Sprite => _sprite;
+
+        private readonly ReactiveProperty<Sprite> _sprite = new();
 
         public CardViewModel(string imageUrl, bool isPremium)
         {
@@ -16,7 +19,7 @@ namespace Cards
 
         public void SetSprite(Sprite sprite)
         {
-            Sprite = sprite;
+            _sprite.Value = sprite;
         }
     }
 }

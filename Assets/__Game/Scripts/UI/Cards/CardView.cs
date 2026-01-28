@@ -4,6 +4,7 @@ using PolyAndCode.UI;
 using UI.Utils;
 using UnityEngine;
 using UnityEngine.UI;
+using ZLinq;
 
 namespace UI.Cards
 {
@@ -12,6 +13,9 @@ namespace UI.Cards
         [SerializeField] private ImageLoader imageLoader;
         [SerializeField] private Image loadedImageComponent;
         [SerializeField] private GameObject premiumGraphics;
+        [SerializeField] private GameObject regularCardButton;
+        [SerializeField] private GameObject premiumCardButton;
+        [SerializeField] private SelectCardButtonAction[] selectCardButtonActions;
 
         private CardViewModel _cardViewModel;
         private Action<Sprite> _onImageLoadSuccessAction;
@@ -32,10 +36,10 @@ namespace UI.Cards
             _cardViewModel = viewModel;
             premiumGraphics.SetActive(_cardViewModel.IsPremium);
 
-            if (viewModel.Sprite)
+            if (viewModel.Sprite.CurrentValue)
             {
                 imageLoader.StopAllCoroutines();
-                loadedImageComponent.sprite = viewModel.Sprite;
+                loadedImageComponent.sprite = viewModel.Sprite.CurrentValue;
                 loadedImageComponent.enabled = true;
             }
             else
@@ -47,6 +51,14 @@ namespace UI.Cards
                 loadedImageComponent.enabled = false;
                 imageLoader.Load(_cardViewModel.ImageUrl);
             }
+
+            foreach (var selectCardButtonAction in selectCardButtonActions.AsValueEnumerable())
+            {
+                selectCardButtonAction.Initialize(_cardViewModel);
+            }
+
+            premiumCardButton.SetActive(_cardViewModel.IsPremium);
+            regularCardButton.SetActive(!_cardViewModel.IsPremium);
 
             _isInitialized = true;
         }

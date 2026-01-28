@@ -10,6 +10,7 @@ namespace Cards
     {
         public ReadOnlyReactiveProperty<List<CardViewModel>> FilteredCardsData => _filteredCardsData;
         public ReadOnlyReactiveProperty<string> SelectedFilterVal => _selectedFilterVal;
+        public ReadOnlyReactiveProperty<CardViewModel> SelectedCard => _selectedCard;
 
         private readonly ReactiveProperty<CardViewModel> _selectedCard = new();
         private readonly ReactiveProperty<string> _selectedFilterVal = new();
@@ -20,6 +21,11 @@ namespace Cards
         {
             InitializeCardsData();
             SetCardsFilter(Const.Cards.Filters.All);
+        }
+
+        public void SelectCard(CardViewModel cardVm)
+        {
+            _selectedCard.Value = cardVm;
         }
 
         public void SetCardsFilter(string filterVal)
@@ -34,7 +40,7 @@ namespace Cards
             {
                 result.AddRange(
                     _allCardsData.AsValueEnumerable()
-                        .Where((_, index) => (index +1) % 2 == 0)
+                        .Where((_, index) => (index + 1) % 2 == 0)
                         .ToList());
             }
             else if (filterVal == Const.Cards.Filters.Odd)
