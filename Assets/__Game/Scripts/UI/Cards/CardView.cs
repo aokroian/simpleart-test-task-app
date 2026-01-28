@@ -3,12 +3,14 @@ using Cards;
 using PolyAndCode.UI;
 using UI.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Cards
 {
     public class CardView : MonoBehaviour, IDisposable, ICell
     {
         [SerializeField] private ImageLoader imageLoader;
+        [SerializeField] private Image loadedImageComponent;
         [SerializeField] private GameObject premiumGraphics;
 
         private CardViewModel _cardViewModel;
@@ -30,12 +32,21 @@ namespace UI.Cards
             _cardViewModel = viewModel;
             premiumGraphics.SetActive(_cardViewModel.IsPremium);
 
-            _onImageLoadErrorAction = onOnImageLoadError;
-            _onImageLoadSuccessAction = onImageLoadSuccess;
-
-            imageLoader.OnImageLoaded += OnImageLoaded;
-            imageLoader.OnImageLoadFailed += OnImageLoadFailed;
-            imageLoader.Load(_cardViewModel.ImageUrl);
+            if (viewModel.Sprite)
+            {
+                imageLoader.StopAllCoroutines();
+                loadedImageComponent.sprite = viewModel.Sprite;
+                loadedImageComponent.enabled = true;
+            }
+            else
+            {
+                _onImageLoadErrorAction = onOnImageLoadError;
+                _onImageLoadSuccessAction = onImageLoadSuccess;
+                imageLoader.OnImageLoaded += OnImageLoaded;
+                imageLoader.OnImageLoadFailed += OnImageLoadFailed;
+                loadedImageComponent.enabled = false;
+                imageLoader.Load(_cardViewModel.ImageUrl);
+            }
 
             _isInitialized = true;
         }
@@ -49,7 +60,6 @@ namespace UI.Cards
             imageLoader.OnImageLoadFailed -= OnImageLoadFailed;
 
             imageLoader.StopAllCoroutines();
-            imageLoader.ClearImage();
             _isInitialized = false;
         }
 

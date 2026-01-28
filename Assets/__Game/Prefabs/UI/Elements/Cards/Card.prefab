@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageLoader: {fileID: 8218213242073011517}
+  loadedImageComponent: {fileID: 6511498667175157328}
   premiumGraphics: {fileID: 6635650851842567967}
 --- !u!1 &5726180851307184191
 GameObject:
