@@ -58,6 +58,7 @@ namespace UI.Cards
                         {
                             if (!_isRecyclableScrollRectInitialized)
                             {
+                                CardsGridLayoutConfigurator.Configure(recyclableScrollRect);
                                 recyclableScrollRect.Initialize(this);
                                 _isRecyclableScrollRectInitialized = true;
                             }
