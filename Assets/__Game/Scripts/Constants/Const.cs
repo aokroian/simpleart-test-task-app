@@ -26,7 +26,7 @@ namespace Constants
 
             public static bool IsPremiumCard(int index)
             {
-                return index % 4 == 0;
+                return index != 0 && (index + 1) % 4 == 0;
             }
         }
     }
