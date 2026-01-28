@@ -3588,6 +3588,7 @@ GameObject:
   - component: {fileID: 3784950473922053644}
   - component: {fileID: 8087720702500850008}
   - component: {fileID: 6102463921356515385}
+  - component: {fileID: 7702974167283159070}
   m_Layer: 5
   m_Name: Canvas_Home
   m_TagString: Untagged
@@ -3730,6 +3731,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recyclableScrollRect: {fileID: 5486572667764881453}
+--- !u!114 &7702974167283159070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290637457870474134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c87b1bc7dd43cbb5a470cd2405a95e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intervalSeconds: 5
+  simpleScrollSnap: {fileID: 5705838847019925349}
 --- !u!1 &7442579714660305571
 GameObject:
   m_ObjectHideFlags: 0
