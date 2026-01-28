@@ -14,6 +14,7 @@ namespace UI.Cards
         private CardViewModel _cardViewModel;
         private Action<Sprite> _onImageLoadSuccessAction;
         private Action _onImageLoadErrorAction;
+        private bool _isInitialized;
 
         public void Initialize(
             CardViewModel viewModel,
@@ -21,6 +22,11 @@ namespace UI.Cards
             Action onOnImageLoadError
         )
         {
+            if (_isInitialized)
+            {
+                Dispose();
+            }
+
             _cardViewModel = viewModel;
             premiumGraphics.SetActive(_cardViewModel.IsPremium);
 
@@ -30,6 +36,8 @@ namespace UI.Cards
             imageLoader.OnImageLoaded += OnImageLoaded;
             imageLoader.OnImageLoadFailed += OnImageLoadFailed;
             imageLoader.Load(_cardViewModel.ImageUrl);
+
+            _isInitialized = true;
         }
 
         public void Dispose()
@@ -42,6 +50,7 @@ namespace UI.Cards
 
             imageLoader.StopAllCoroutines();
             imageLoader.ClearImage();
+            _isInitialized = false;
         }
 
         private void OnDisable()

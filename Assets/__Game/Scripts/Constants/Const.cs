@@ -15,13 +15,18 @@ namespace Constants
             public const string ImagesBaseUrl = "http://data.ikppbb.com/test-task-unity-data/pics/";
             public const int ImagesUrlsIndicesFirst = 1;
             public const int ImagesUrlsIndicesLast = 66;
-            public const string ImagesUrlEnding = "/.jpg";
+            public const string ImagesUrlEnding = ".jpg";
 
             public static class Filters
             {
                 public const string All = "all";
                 public const string Odd = "odd";
                 public const string Even = "even";
+            }
+
+            public static bool IsPremiumCard(int index)
+            {
+                return index % 4 == 0;
             }
         }
     }
