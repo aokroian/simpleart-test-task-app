@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 944264074003550724}
   - component: {fileID: 7115039239137437959}
   - component: {fileID: 4248385143658513889}
+  - component: {fileID: 2058986155371369588}
   m_Layer: 5
   m_Name: CardsFilterButton
   m_TagString: Untagged
@@ -203,6 +204,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 0
   filterOptionVal: 
+--- !u!114 &2058986155371369588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184779504014821116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7dd93642b242da8bd9167f65ace380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 0
+  soundID: button_click
 --- !u!1 &1223230646681146856
 GameObject:
   m_ObjectHideFlags: 0

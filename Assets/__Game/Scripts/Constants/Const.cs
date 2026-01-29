@@ -29,5 +29,10 @@ namespace Constants
                 return index != 0 && (index + 1) % 4 == 0;
             }
         }
+
+        public static class Sounds
+        {
+            public const string ButtonClick = "button_click";
+        }
     }
 }

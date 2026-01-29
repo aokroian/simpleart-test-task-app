@@ -747,6 +747,7 @@ GameObject:
   - component: {fileID: 2242652741813028070}
   - component: {fileID: 1712514480838928479}
   - component: {fileID: 1121706723731508739}
+  - component: {fileID: 3425300041348249969}
   m_Layer: 5
   m_Name: RegularCardButton
   m_TagString: Untagged
@@ -894,6 +895,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 1
   pointID: card_popup
+--- !u!114 &3425300041348249969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191505709422443299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7dd93642b242da8bd9167f65ace380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 2
+  soundID: button_click
 --- !u!1 &8948035555976156780
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +924,7 @@ GameObject:
   - component: {fileID: 2317824782191031875}
   - component: {fileID: 3502069839989258510}
   - component: {fileID: 463017930958196640}
+  - component: {fileID: 8739718256691611837}
   m_Layer: 5
   m_Name: PremiumCardButton
   m_TagString: Untagged
@@ -1056,3 +1072,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 1
   pointID: premium_popup
+--- !u!114 &8739718256691611837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948035555976156780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7dd93642b242da8bd9167f65ace380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 2
+  soundID: button_click
