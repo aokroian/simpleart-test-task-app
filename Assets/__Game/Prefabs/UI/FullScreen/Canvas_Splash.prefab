@@ -87,8 +87,9 @@ GameObject:
   - component: {fileID: 2144232981754292581}
   - component: {fileID: 1427116634990845980}
   - component: {fileID: 2465900223784798483}
+  - component: {fileID: 5036632718888863114}
   - component: {fileID: 2885423434238881422}
-  - component: {fileID: 1126851608167077415}
+  - component: {fileID: 2859664447021582011}
   - component: {fileID: 5418249907895233379}
   m_Layer: 5
   m_Name: Canvas_Splash
@@ -180,6 +181,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &5036632718888863114
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5604034637604973447}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &2885423434238881422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae30dda790494cb2d23d0103cb5628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1126851608167077415
+--- !u!114 &2859664447021582011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,9 +214,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5604034637604973447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff591ee224a04bf5ba5976772385e231, type: 3}
+  m_Script: {fileID: 11500000, guid: b61738a6594a4e9cb3090a9282c2791e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 5036632718888863114}
+  duration: 0.25
 --- !u!114 &5418249907895233379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,4 +232,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PointId>k__BackingField: splash
-  toggler: {fileID: 1126851608167077415}
+  toggler: {fileID: 2859664447021582011}

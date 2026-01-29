@@ -2176,8 +2176,9 @@ GameObject:
   - component: {fileID: 6007219212670474082}
   - component: {fileID: 7826898456143594072}
   - component: {fileID: 7453337032881799682}
+  - component: {fileID: 2087423686306173484}
   - component: {fileID: 2701470348519028429}
-  - component: {fileID: 1538557971567550953}
+  - component: {fileID: 6322088960535325792}
   - component: {fileID: 1797619500206599396}
   m_Layer: 5
   m_Name: Canvas_PremiumPopup
@@ -2271,6 +2272,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &2087423686306173484
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822412736116373140}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &2701470348519028429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,7 +2296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae30dda790494cb2d23d0103cb5628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1538557971567550953
+--- !u!114 &6322088960535325792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2292,9 +2305,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2822412736116373140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff591ee224a04bf5ba5976772385e231, type: 3}
+  m_Script: {fileID: 11500000, guid: b61738a6594a4e9cb3090a9282c2791e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 2087423686306173484}
+  duration: 0.25
 --- !u!114 &1797619500206599396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2308,7 +2323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PointId>k__BackingField: premium_popup
-  toggler: {fileID: 1538557971567550953}
+  toggler: {fileID: 6322088960535325792}
 --- !u!1 &2916098837438140796
 GameObject:
   m_ObjectHideFlags: 0

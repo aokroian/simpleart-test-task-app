@@ -3584,8 +3584,9 @@ GameObject:
   - component: {fileID: 266200274550065702}
   - component: {fileID: 8589189979400131751}
   - component: {fileID: 5773439377229130393}
+  - component: {fileID: 7160116415076043483}
+  - component: {fileID: 7012369484788142086}
   - component: {fileID: 3123864228985213015}
-  - component: {fileID: 3784950473922053644}
   - component: {fileID: 8087720702500850008}
   - component: {fileID: 6102463921356515385}
   - component: {fileID: 7702974167283159070}
@@ -3680,6 +3681,32 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &7160116415076043483
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290637457870474134}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &7012369484788142086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290637457870474134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61738a6594a4e9cb3090a9282c2791e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 7160116415076043483}
+  duration: 0.25
 --- !u!114 &3123864228985213015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3690,18 +3717,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3ae30dda790494cb2d23d0103cb5628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3784950473922053644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7290637457870474134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff591ee224a04bf5ba5976772385e231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8087720702500850008
@@ -3717,7 +3732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PointId>k__BackingField: home
-  toggler: {fileID: 3784950473922053644}
+  toggler: {fileID: 7012369484788142086}
 --- !u!114 &6102463921356515385
 MonoBehaviour:
   m_ObjectHideFlags: 0

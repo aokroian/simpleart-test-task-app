@@ -221,8 +221,9 @@ GameObject:
   - component: {fileID: 7433276321922571746}
   - component: {fileID: 7262572931186915896}
   - component: {fileID: 262616923623204456}
+  - component: {fileID: 7946968262207384365}
   - component: {fileID: 8560884838937262396}
-  - component: {fileID: 6947585740098044008}
+  - component: {fileID: 6244703009433588134}
   - component: {fileID: 3543282649617425355}
   - component: {fileID: 4307293748844791336}
   m_Layer: 5
@@ -317,6 +318,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &7946968262207384365
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848190258606289603}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &8560884838937262396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ae30dda790494cb2d23d0103cb5628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6947585740098044008
+--- !u!114 &6244703009433588134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -338,9 +351,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5848190258606289603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff591ee224a04bf5ba5976772385e231, type: 3}
+  m_Script: {fileID: 11500000, guid: b61738a6594a4e9cb3090a9282c2791e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 7946968262207384365}
+  duration: 0.35
 --- !u!114 &3543282649617425355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PointId>k__BackingField: card_popup
-  toggler: {fileID: 6947585740098044008}
+  toggler: {fileID: 6244703009433588134}
 --- !u!114 &4307293748844791336
 MonoBehaviour:
   m_ObjectHideFlags: 0
